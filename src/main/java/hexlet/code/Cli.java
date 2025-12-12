@@ -6,12 +6,18 @@ public class Cli {
 
     private static final Scanner SCANNER = new Scanner(System.in);
 
-    public static String askName() {
-        System.out.print("May I have your name? ");
+    public static String readData() {
         return SCANNER.next();
     }
 
-    public static void greetUser(String userName) {
-        System.out.printf("Hello, %s!%n", userName);
+    public static int readNum() {
+        while (true) {
+            try {
+                String data = readData();
+                return Integer.parseInt(data);
+            } catch (NumberFormatException e) {
+                System.out.println("Wrong number. Try again.");
+            }
+        }
     }
 }
