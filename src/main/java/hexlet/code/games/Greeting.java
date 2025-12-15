@@ -1,10 +1,20 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
+import hexlet.code.utils.ConsoleInputReader;
 
-public class Greetings implements Game {
+public class Greeting implements Game {
 
-    public static final String NAME = "Greet";
+    private static final String GAME_NAME = "Greet";
+    private static final String ASK_NAME_QUESTION = "May I have your name? ";
+    private static final String GREETING_TEMPLATE = "Hello, %s!%n";
+
+    public static void askName() {
+        System.out.print(ASK_NAME_QUESTION);
+    }
+
+    public static void greetUser(String userName) {
+        System.out.printf(GREETING_TEMPLATE, userName);
+    }
 
     /**
      * Возвращает название игры.
@@ -15,8 +25,8 @@ public class Greetings implements Game {
      * @return название игры
      */
     @Override
-    public String getName() {
-        return NAME;
+    public String getGameName() {
+        return GAME_NAME;
     }
 
     /**
@@ -29,16 +39,8 @@ public class Greetings implements Game {
      */
     @Override
     public void play() {
-        String userName = askName();
+        askName();
+        String userName = ConsoleInputReader.readString();
         greetUser(userName);
-    }
-
-    private String askName() {
-        System.out.print("May I have your name? ");
-        return Cli.readData();
-    }
-
-    private void greetUser(String userName) {
-        System.out.printf("Hello, %s!%n", userName);
     }
 }
