@@ -33,4 +33,7 @@
 ## Calc Demo
 [![asciinema demo](https://asciinema.org/a/zab8KRzZx318y6vm4bvbldwM8.svg)](https://asciinema.org/a/zab8KRzZx318y6vm4bvbldwM8)
 
+## GCD Demo
+[![asciinema demo](https://asciinema.org/a/440vfxn8tZ0ew9HVPaVZSzZ6i.svg)](https://asciinema.org/a/440vfxn8tZ0ew9HVPaVZSzZ6i)
+
 

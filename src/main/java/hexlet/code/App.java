@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.Even;
 import hexlet.code.games.Game;
+import hexlet.code.games.Gcd;
 import hexlet.code.games.Greeting;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Engine;
@@ -26,6 +27,7 @@ public class App {
         return List.of(
                 new Greeting(),
                 new Even(),
-                new Calc());
+                new Calc(),
+                new Gcd());
     }
 }
