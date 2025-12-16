@@ -7,8 +7,8 @@ import java.util.List;
 
 public class Progression implements Game {
 
-    private static final String GAME_NAME = "Progression";
-    private static final String MAIN_QUESTION = "What number is missing in the progression?";
+    private static final String PROGRESSION_GAME_NAME = "Progression";
+    private static final String PROGRESSION_MAIN_QUESTION = "What number is missing in the progression?";
     private static final int MIN_LENGTH = 5;
     private static final int MAX_LENGTH = 10;
     private static final int MIN_STEP = 2;
@@ -23,7 +23,7 @@ public class Progression implements Game {
      */
     @Override
     public String getGameName() {
-        return GAME_NAME;
+        return PROGRESSION_GAME_NAME;
     }
 
     /**
@@ -33,7 +33,7 @@ public class Progression implements Game {
      */
     @Override
     public String getMainQuestion() {
-        return MAIN_QUESTION;
+        return PROGRESSION_MAIN_QUESTION;
     }
 
     /**

@@ -7,6 +7,7 @@ import hexlet.code.games.Greeting;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Engine;
 import hexlet.code.games.EngineImpl;
+import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 import hexlet.code.utils.ConsoleInputReader;
 
@@ -30,6 +31,7 @@ public class App {
                 new Even(),
                 new Calc(),
                 new Gcd(),
-                new Progression());
+                new Progression(),
+                new Prime());
     }
 }

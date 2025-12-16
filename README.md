@@ -15,6 +15,8 @@
 ## 5. Progression Demo
 [![asciinema demo](https://asciinema.org/a/wAo2itq8JYSvOPuLp2fmTOzBq.svg)](https://asciinema.org/a/wAo2itq8JYSvOPuLp2fmTOzBq)
 
+## 6. Prime Demo
+[![asciinema demo](https://asciinema.org/a/6XdTfHskyAoFX5usoacJnjHdp.svg)](https://asciinema.org/a/6XdTfHskyAoFX5usoacJnjHdp)
 
 ---
 ### Hexlet tests and linter status:
