@@ -4,9 +4,9 @@ import hexlet.code.utils.RandomGenerator;
 
 public class Calc implements Game {
 
-    private static final String GAME_NAME = "Calc";
-    private static final String MAIN_QUESTION = "What is the result of the expression?";
-    private static final String EXPRESSION_TEMPLATE = "%s %s %s";
+    private static final String CALC_GAME_NAME = "Calc";
+    private static final String CALC_MAIN_QUESTION = "What is the result of the expression?";
+    private static final String CALC_EXPRESSION_TEMPLATE = "%s %s %s";
 
     /**
      * Возвращает название игры.
@@ -15,7 +15,7 @@ public class Calc implements Game {
      */
     @Override
     public String getGameName() {
-        return GAME_NAME;
+        return CALC_GAME_NAME;
     }
 
     /**
@@ -25,7 +25,7 @@ public class Calc implements Game {
      */
     @Override
     public String getMainQuestion() {
-        return MAIN_QUESTION;
+        return CALC_MAIN_QUESTION;
     }
 
     /**
@@ -40,7 +40,7 @@ public class Calc implements Game {
         MathOperation randomMathOperation = RandomGenerator.getRandomMathOperation();
         int correctAnswer = randomMathOperation.apply(firstRandomInt, secondRandomInt);
         return new ExpressionResult(
-                EXPRESSION_TEMPLATE.formatted(firstRandomInt, randomMathOperation.getSymbol(), secondRandomInt),
+                CALC_EXPRESSION_TEMPLATE.formatted(firstRandomInt, randomMathOperation.getSymbol(), secondRandomInt),
                 String.valueOf(correctAnswer));
     }
 }

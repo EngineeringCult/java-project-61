@@ -1,3 +1,22 @@
+# Brain Games
+
+## 1. Greet Demo
+[![asciinema demo](https://asciinema.org/a/oVFp11v5nQS6mFtYOAtSEAihE.svg)](https://asciinema.org/a/oVFp11v5nQS6mFtYOAtSEAihE)
+
+## 2. Even Demo
+[![asciinema demo](https://asciinema.org/a/W4KiaMzbLlrK4v8EiYnT4f6dY.svg)](https://asciinema.org/a/W4KiaMzbLlrK4v8EiYnT4f6dY)
+
+## 3. Calc Demo
+[![asciinema demo](https://asciinema.org/a/zab8KRzZx318y6vm4bvbldwM8.svg)](https://asciinema.org/a/zab8KRzZx318y6vm4bvbldwM8)
+
+## 4. GCD Demo
+[![asciinema demo](https://asciinema.org/a/440vfxn8tZ0ew9HVPaVZSzZ6i.svg)](https://asciinema.org/a/440vfxn8tZ0ew9HVPaVZSzZ6i)
+
+## 5. Progression Demo
+[![asciinema demo](https://asciinema.org/a/wAo2itq8JYSvOPuLp2fmTOzBq.svg)](https://asciinema.org/a/wAo2itq8JYSvOPuLp2fmTOzBq)
+
+
+---
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/EngineeringCult/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/EngineeringCult/java-project-61/actions)
 
@@ -22,18 +41,3 @@
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=EngineeringCult_java-project-61&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=EngineeringCult_java-project-61)
 
 [![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-light.svg)](https://sonarcloud.io/summary/new_code?id=EngineeringCult_java-project-61)
-
-
-## Greet Demo
-[![asciinema demo](https://asciinema.org/a/oVFp11v5nQS6mFtYOAtSEAihE.svg)](https://asciinema.org/a/oVFp11v5nQS6mFtYOAtSEAihE)
-
-## Even Demo
-[![asciinema demo](https://asciinema.org/a/W4KiaMzbLlrK4v8EiYnT4f6dY.svg)](https://asciinema.org/a/W4KiaMzbLlrK4v8EiYnT4f6dY)
-
-## Calc Demo
-[![asciinema demo](https://asciinema.org/a/zab8KRzZx318y6vm4bvbldwM8.svg)](https://asciinema.org/a/zab8KRzZx318y6vm4bvbldwM8)
-
-## GCD Demo
-[![asciinema demo](https://asciinema.org/a/440vfxn8tZ0ew9HVPaVZSzZ6i.svg)](https://asciinema.org/a/440vfxn8tZ0ew9HVPaVZSzZ6i)
-
-

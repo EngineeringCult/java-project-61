@@ -18,4 +18,8 @@ public class RandomGenerator {
     public static MathOperation getRandomMathOperation() {
         return VALUES[RANDOM.nextInt(VALUES.length)];
     }
+
+    public static int getRandomIntInRange(int min, int max) {
+        return min + RANDOM.nextInt(max - min + 1);
+    }
 }

@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 public class Greeting implements Game {
 
-    private static final String GAME_NAME = "Greet";
+    private static final String GREETING_GAME_NAME = "Greet";
     private static final String ASK_NAME_QUESTION = "May I have your name? ";
     private static final String GREETING_TEMPLATE = "Hello, %s!%n";
 
@@ -21,7 +21,7 @@ public class Greeting implements Game {
      */
     @Override
     public String getGameName() {
-        return GAME_NAME;
+        return GREETING_GAME_NAME;
     }
 
     /**

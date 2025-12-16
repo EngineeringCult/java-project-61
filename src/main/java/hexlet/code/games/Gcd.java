@@ -6,9 +6,9 @@ import java.math.BigInteger;
 
 public class Gcd implements Game {
 
-    private static final String GAME_NAME = "GCD";
-    private static final String MAIN_QUESTION = "Find the greatest common divisor of given numbers.";
-    private static final String EXPRESSION_TEMPLATE = "%s %s";
+    private static final String GCD_GAME_NAME = "GCD";
+    private static final String GCD_MAIN_QUESTION = "Find the greatest common divisor of given numbers.";
+    private static final String GCD_EXPRESSION_TEMPLATE = "%s %s";
 
     /**
      * Возвращает название игры.
@@ -17,7 +17,7 @@ public class Gcd implements Game {
      */
     @Override
     public String getGameName() {
-        return GAME_NAME;
+        return GCD_GAME_NAME;
     }
 
     /**
@@ -27,7 +27,7 @@ public class Gcd implements Game {
      */
     @Override
     public String getMainQuestion() {
-        return MAIN_QUESTION;
+        return GCD_MAIN_QUESTION;
     }
 
     /**
@@ -43,7 +43,7 @@ public class Gcd implements Game {
                 .gcd(BigInteger.valueOf(secondRandomInt))
                 .intValue();
         return new ExpressionResult(
-                EXPRESSION_TEMPLATE.formatted(firstRandomInt, secondRandomInt),
+                GCD_EXPRESSION_TEMPLATE.formatted(firstRandomInt, secondRandomInt),
                 String.valueOf(correctAnswer));
     }
 }

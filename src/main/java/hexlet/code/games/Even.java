@@ -4,8 +4,8 @@ import hexlet.code.utils.RandomGenerator;
 
 public class Even implements Game {
 
-    private static final String GAME_NAME = "Even";
-    private static final String MAIN_QUESTION = "Answer '%s' if the number is even, otherwise answer '%s'."
+    private static final String EVEN_GAME_NAME = "Even";
+    private static final String EVEN_MAIN_QUESTION = "Answer '%s' if the number is even, otherwise answer '%s'."
             .formatted(Answer.YES.getValue(), Answer.NO.getValue());
 
     /**
@@ -15,7 +15,7 @@ public class Even implements Game {
      */
     @Override
     public String getGameName() {
-        return GAME_NAME;
+        return EVEN_GAME_NAME;
     }
 
     /**
@@ -25,7 +25,7 @@ public class Even implements Game {
      */
     @Override
     public String getMainQuestion() {
-        return MAIN_QUESTION;
+        return EVEN_MAIN_QUESTION;
     }
 
     /**

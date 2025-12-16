@@ -7,6 +7,7 @@ import hexlet.code.games.Greeting;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Engine;
 import hexlet.code.games.EngineImpl;
+import hexlet.code.games.Progression;
 import hexlet.code.utils.ConsoleInputReader;
 
 import java.util.List;
@@ -28,6 +29,7 @@ public class App {
                 new Greeting(),
                 new Even(),
                 new Calc(),
-                new Gcd());
+                new Gcd(),
+                new Progression());
     }
 }
