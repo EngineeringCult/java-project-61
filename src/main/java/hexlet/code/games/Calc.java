@@ -2,11 +2,11 @@ package hexlet.code.games;
 
 import hexlet.code.utils.RandomGenerator;
 
-public class Even implements Game {
+public class Calc implements Game {
 
-    private static final String GAME_NAME = "Even";
-    private static final String MAIN_QUESTION = "Answer '%s' if the number is even, otherwise answer '%s'."
-            .formatted(Answer.YES.getValue(), Answer.NO.getValue());
+    private static final String GAME_NAME = "Calc";
+    private static final String MAIN_QUESTION = "What is the result of the expression?";
+    private static final String EXPRESSION_TEMPLATE = "%s %s %s";
 
     /**
      * Возвращает название игры.
@@ -35,22 +35,12 @@ public class Even implements Game {
      */
     @Override
     public ExpressionResult getExpressionResult() {
-        int randomInt = RandomGenerator.getRandomInt();
-        Answer correctAnswer = getCorrectAnswer(randomInt);
+        int firstRandomInt = RandomGenerator.getRandomInt();
+        int secondRandomInt = RandomGenerator.getRandomInt();
+        MathOperation randomMathOperation = RandomGenerator.getRandomMathOperation();
+        int correctAnswer = randomMathOperation.apply(firstRandomInt, secondRandomInt);
         return new ExpressionResult(
-                String.valueOf(randomInt),
-                correctAnswer.getValue());
-    }
-
-    private static Answer getCorrectAnswer(int randomInt) {
-        if (isEven(randomInt)) {
-            return Answer.YES;
-        } else {
-            return Answer.NO;
-        }
-    }
-
-    private static boolean isEven(int randomInt) {
-        return randomInt % 2 == 0;
+                EXPRESSION_TEMPLATE.formatted(firstRandomInt, randomMathOperation.getSymbol(), secondRandomInt),
+                String.valueOf(correctAnswer));
     }
 }

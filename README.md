@@ -24,5 +24,13 @@
 [![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-light.svg)](https://sonarcloud.io/summary/new_code?id=EngineeringCult_java-project-61)
 
 
+## Greet Demo
+[![asciinema demo](https://asciinema.org/a/oVFp11v5nQS6mFtYOAtSEAihE.svg)](https://asciinema.org/a/oVFp11v5nQS6mFtYOAtSEAihE)
+
 ## Even Demo
-[![asciinema demo](https://asciinema.org/a/1FH6ZxY3XcsWvKc9CYY9ryArq.svg)](https://asciinema.org/a/1FH6ZxY3XcsWvKc9CYY9ryArq)
+[![asciinema demo](https://asciinema.org/a/W4KiaMzbLlrK4v8EiYnT4f6dY.svg)](https://asciinema.org/a/W4KiaMzbLlrK4v8EiYnT4f6dY)
+
+## Calc Demo
+[![asciinema demo](https://asciinema.org/a/zab8KRzZx318y6vm4bvbldwM8.svg)](https://asciinema.org/a/zab8KRzZx318y6vm4bvbldwM8)
+
+

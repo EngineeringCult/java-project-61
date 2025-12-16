@@ -1,7 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.utils.ConsoleInputReader;
-
 public class Greeting implements Game {
 
     private static final String GAME_NAME = "Greet";
@@ -19,9 +17,6 @@ public class Greeting implements Game {
     /**
      * Возвращает название игры.
      *
-     * <p>Подклассы могут переопределять этот метод для изменения отображаемого названия.
-     * При переопределении рекомендуется возвращать непустую строку.</p>
-     *
      * @return название игры
      */
     @Override
@@ -30,17 +25,22 @@ public class Greeting implements Game {
     }
 
     /**
-     * Запускает игровой процесс.
+     * Возвращает основной (корневой) вопрос.
      *
-     * <p>Метод запрашивает имя пользователя и выводит приветствие.
-     * Подклассы могут переопределять метод, чтобы изменить сценарий игры.
-     * При переопределении рекомендуется сохранять основной контракт метода —
-     * корректно запускать игровой процесс и не завершать его преждевременно.</p>
+     * @return основной вопрос
      */
     @Override
-    public void play() {
-        askName();
-        String userName = ConsoleInputReader.readString();
-        greetUser(userName);
+    public String getMainQuestion() {
+        return "";
+    }
+
+    /**
+     * Возвращает объект с выражением (вопросом) и правильным результатом.
+     *
+     * @return объект с выражением и результатом
+     */
+    @Override
+    public ExpressionResult getExpressionResult() {
+        return null;
     }
 }
