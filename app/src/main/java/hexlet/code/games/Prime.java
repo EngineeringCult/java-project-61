@@ -2,29 +2,18 @@ package hexlet.code.games;
 
 import hexlet.code.utils.RandomGenerator;
 
-public class Prime implements Game {
+public class Prime {
 
-    private static final String PRIME_GAME_NAME = "Prime";
     private static final String PRIME_MAIN_QUESTION = "Answer '%s' if given number is prime. Otherwise answer '%s'."
             .formatted(Answer.YES.getValue(), Answer.NO.getValue());
     private static final int FIRST_ODD_DIVISOR = 3;
-    /**
-     * Возвращает название игры.
-     *
-     * @return название игры
-     */
-    @Override
-    public String getGameName() {
-        return PRIME_GAME_NAME;
-    }
 
     /**
      * Возвращает основной (корневой) вопрос.
      *
      * @return основной вопрос
      */
-    @Override
-    public String getMainQuestion() {
+    public static String getMainQuestion() {
         return PRIME_MAIN_QUESTION;
     }
 
@@ -33,8 +22,7 @@ public class Prime implements Game {
      *
      * @return объект с выражением и результатом
      */
-    @Override
-    public ExpressionResult getExpressionResult() {
+    public static ExpressionResult getExpressionResult() {
         int randomInt = RandomGenerator.getRandomInt();
         Answer correctAnswer = getCorrectAnswer(randomInt);
         return new ExpressionResult(
@@ -42,7 +30,7 @@ public class Prime implements Game {
                 correctAnswer.getValue());
     }
 
-    private Answer getCorrectAnswer(int randomInt) {
+    private static Answer getCorrectAnswer(int randomInt) {
         if (isPrime(randomInt)) {
             return Answer.YES;
         } else {

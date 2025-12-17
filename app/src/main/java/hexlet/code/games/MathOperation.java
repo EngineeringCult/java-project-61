@@ -11,9 +11,9 @@ public enum MathOperation {
     private final String symbol;
     private final IntBinaryOperator operation;
 
-    MathOperation(String symbol, IntBinaryOperator operation) {
-        this.symbol = symbol;
-        this.operation = operation;
+    MathOperation(String symbolValue, IntBinaryOperator operationValue) {
+        this.symbol = symbolValue;
+        this.operation = operationValue;
     }
 
     public String getSymbol() {

@@ -3,7 +3,9 @@ package hexlet.code.games;
 import hexlet.code.Cli;
 import hexlet.code.utils.ConsoleInputReader;
 
-public class EngineImpl implements Engine {
+import java.util.function.Supplier;
+
+public class Engine {
 
     private static final int QUESTIONS_NUMBER = 3;
     private static final String EXPRESSION_QUESTION_TEMPLATE = "Question: %s%n";
@@ -12,6 +14,7 @@ public class EngineImpl implements Engine {
     private static final String WRONG_ANSWER_MESSAGE_TEMPLATE = "'%s' is wrong answer ;(. Correct answer was '%s'."
             + "%nLet's try again, %s!%n";
     private static final String CONGRATULATIONS_MESSAGE_TEMPLATE = "Congratulations, %s!%n";
+    private static final String UNKNOWN_GAME_SELECTED_MESSAGE = "Unknown game selected";
 
     /**
      * Запускает игровой сценарий.
@@ -28,21 +31,54 @@ public class EngineImpl implements Engine {
      *
      * @param game объект игры, содержащий вопросы и правильные ответы
      */
-    @Override
-    public void run(Game game) {
+    public static void run(Game game) {
         System.out.println();
         Cli.firstGreet();
         Greeting.askName();
         String userName = ConsoleInputReader.readString();
         Greeting.greetUser(userName);
 
-        if (game instanceof Greeting) {
-            return;
+        String mainQuestion;
+        Supplier<ExpressionResult> expressionResultSupplier;
+        switch (game) {
+            case GREET -> {
+                return;
+            }
+            case EVEN -> {
+                mainQuestion = Even.getMainQuestion();
+                expressionResultSupplier = Even::getExpressionResult;
+            }
+            case CALC -> {
+                mainQuestion = Calc.getMainQuestion();
+                expressionResultSupplier = Calc::getExpressionResult;
+            }
+            case GCD -> {
+                mainQuestion = Gcd.getMainQuestion();
+                expressionResultSupplier = Gcd::getExpressionResult;
+            }
+            case PROGRESSION -> {
+                mainQuestion = Progression.getMainQuestion();
+                expressionResultSupplier = Progression::getExpressionResult;
+            }
+            case PRIME -> {
+                mainQuestion = Prime.getMainQuestion();
+                expressionResultSupplier = Prime::getExpressionResult;
+            }
+            default -> {
+                System.out.println(UNKNOWN_GAME_SELECTED_MESSAGE);
+                return;
+            }
         }
 
-        System.out.println(game.getMainQuestion());
+        executeGameLogic(mainQuestion, expressionResultSupplier, userName);
+    }
+
+    private static void executeGameLogic(
+            String mainQuestion, Supplier<ExpressionResult> expressionResultSupplier, String userName) {
+        ExpressionResult expressionResult;
+        System.out.println(mainQuestion);
         for (int i = 0; i < QUESTIONS_NUMBER; i++) {
-            ExpressionResult expressionResult = game.getExpressionResult();
+            expressionResult = expressionResultSupplier.get();
             System.out.printf(EXPRESSION_QUESTION_TEMPLATE, expressionResult.expression());
             System.out.print(USER_ANSWER_MESSAGE);
             String userAnswer = ConsoleInputReader.readString();

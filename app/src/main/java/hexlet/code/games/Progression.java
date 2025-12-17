@@ -5,9 +5,8 @@ import hexlet.code.utils.RandomGenerator;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Progression implements Game {
+public class Progression {
 
-    private static final String PROGRESSION_GAME_NAME = "Progression";
     private static final String PROGRESSION_MAIN_QUESTION = "What number is missing in the progression?";
     private static final int MIN_LENGTH = 5;
     private static final int MAX_LENGTH = 10;
@@ -17,22 +16,11 @@ public class Progression implements Game {
     private static final int MAX_FIRST_ITEM = 20;
 
     /**
-     * Возвращает название игры.
-     *
-     * @return название игры
-     */
-    @Override
-    public String getGameName() {
-        return PROGRESSION_GAME_NAME;
-    }
-
-    /**
      * Возвращает основной (корневой) вопрос.
      *
      * @return основной вопрос
      */
-    @Override
-    public String getMainQuestion() {
+    public static String getMainQuestion() {
         return PROGRESSION_MAIN_QUESTION;
     }
 
@@ -41,8 +29,7 @@ public class Progression implements Game {
      *
      * @return объект с выражением и результатом
      */
-    @Override
-    public ExpressionResult getExpressionResult() {
+    public static ExpressionResult getExpressionResult() {
         int step = RandomGenerator.getRandomIntInRange(MIN_STEP, MAX_STEP);
         int length = RandomGenerator.getRandomIntInRange(MIN_LENGTH, MAX_LENGTH);
         int item = RandomGenerator.getRandomIntInRange(MIN_FIRST_ITEM, MAX_FIRST_ITEM);

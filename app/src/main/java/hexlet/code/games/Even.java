@@ -2,29 +2,18 @@ package hexlet.code.games;
 
 import hexlet.code.utils.RandomGenerator;
 
-public class Even implements Game {
+public class Even {
 
     private static final String EVEN_GAME_NAME = "Even";
     private static final String EVEN_MAIN_QUESTION = "Answer '%s' if the number is even, otherwise answer '%s'."
             .formatted(Answer.YES.getValue(), Answer.NO.getValue());
 
     /**
-     * Возвращает название игры.
-     *
-     * @return название игры
-     */
-    @Override
-    public String getGameName() {
-        return EVEN_GAME_NAME;
-    }
-
-    /**
      * Возвращает основной (корневой) вопрос.
      *
      * @return основной вопрос
      */
-    @Override
-    public String getMainQuestion() {
+    public static String getMainQuestion() {
         return EVEN_MAIN_QUESTION;
     }
 
@@ -33,8 +22,7 @@ public class Even implements Game {
      *
      * @return объект с выражением и результатом
      */
-    @Override
-    public ExpressionResult getExpressionResult() {
+    public static ExpressionResult getExpressionResult() {
         int randomInt = RandomGenerator.getRandomInt();
         Answer correctAnswer = getCorrectAnswer(randomInt);
         return new ExpressionResult(

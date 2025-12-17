@@ -6,8 +6,8 @@ public enum Answer {
 
     private final String value;
 
-    Answer(String value) {
-        this.value = value;
+    Answer(String valueValue) {
+        this.value = valueValue;
     }
 
     public String getValue() {

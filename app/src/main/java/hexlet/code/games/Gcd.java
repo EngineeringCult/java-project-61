@@ -4,29 +4,18 @@ import hexlet.code.utils.RandomGenerator;
 
 import java.math.BigInteger;
 
-public class Gcd implements Game {
+public class Gcd {
 
     private static final String GCD_GAME_NAME = "GCD";
     private static final String GCD_MAIN_QUESTION = "Find the greatest common divisor of given numbers.";
     private static final String GCD_EXPRESSION_TEMPLATE = "%s %s";
 
     /**
-     * Возвращает название игры.
-     *
-     * @return название игры
-     */
-    @Override
-    public String getGameName() {
-        return GCD_GAME_NAME;
-    }
-
-    /**
      * Возвращает основной (корневой) вопрос.
      *
      * @return основной вопрос
      */
-    @Override
-    public String getMainQuestion() {
+    public static String getMainQuestion() {
         return GCD_MAIN_QUESTION;
     }
 
@@ -35,8 +24,7 @@ public class Gcd implements Game {
      *
      * @return объект с выражением и результатом
      */
-    @Override
-    public ExpressionResult getExpressionResult() {
+    public static ExpressionResult getExpressionResult() {
         int firstRandomInt = RandomGenerator.getRandomInt();
         int secondRandomInt = RandomGenerator.getRandomInt();
         int correctAnswer = BigInteger.valueOf(firstRandomInt)
