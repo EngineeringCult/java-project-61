@@ -3,10 +3,12 @@ package hexlet.code.games;
 import hexlet.code.utils.RandomGenerator;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Gcd {
 
-    private static final String GCD_GAME_NAME = "GCD";
+    private static final int GCD_QUESTIONS_NUMBER = 3;
     private static final String GCD_MAIN_QUESTION = "Find the greatest common divisor of given numbers.";
     private static final String GCD_EXPRESSION_TEMPLATE = "%s %s";
 
@@ -20,11 +22,19 @@ public class Gcd {
     }
 
     /**
-     * Возвращает объект с выражением (вопросом) и правильным результатом.
+     * Возвращает список объектов с выражением (вопросом) и правильным результатом.
      *
-     * @return объект с выражением и результатом
+     * @return список объектов с выражением и результатом
      */
-    public static ExpressionResult getExpressionResult() {
+    public static List<ExpressionResult> getExpressionResults() {
+        List<ExpressionResult> expressionResults = new ArrayList<>();
+        for (int i = 0; i < GCD_QUESTIONS_NUMBER; i++) {
+            expressionResults.add(getExpressionResult());
+        }
+        return expressionResults;
+    }
+
+    private static ExpressionResult getExpressionResult() {
         int firstRandomInt = RandomGenerator.getRandomInt();
         int secondRandomInt = RandomGenerator.getRandomInt();
         int correctAnswer = BigInteger.valueOf(firstRandomInt)

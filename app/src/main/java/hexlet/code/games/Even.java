@@ -2,9 +2,12 @@ package hexlet.code.games;
 
 import hexlet.code.utils.RandomGenerator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Even {
 
-    private static final String EVEN_GAME_NAME = "Even";
+    private static final int EVEN_QUESTIONS_NUMBER = 3;
     private static final String EVEN_MAIN_QUESTION = "Answer '%s' if the number is even, otherwise answer '%s'."
             .formatted(Answer.YES.getValue(), Answer.NO.getValue());
 
@@ -18,10 +21,18 @@ public class Even {
     }
 
     /**
-     * Возвращает объект с выражением (вопросом) и правильным результатом.
+     * Возвращает список объектов с выражением (вопросом) и правильным результатом.
      *
-     * @return объект с выражением и результатом
+     * @return список объектов с выражением и результатом
      */
+    public static List<ExpressionResult> getExpressionResults() {
+        List<ExpressionResult> expressionResults = new ArrayList<>();
+        for (int i = 0; i < EVEN_QUESTIONS_NUMBER; i++) {
+            expressionResults.add(getExpressionResult());
+        }
+        return expressionResults;
+    }
+
     public static ExpressionResult getExpressionResult() {
         int randomInt = RandomGenerator.getRandomInt();
         Answer correctAnswer = getCorrectAnswer(randomInt);

@@ -2,8 +2,12 @@ package hexlet.code.games;
 
 import hexlet.code.utils.RandomGenerator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Prime {
 
+    private static final int PRIME_QUESTIONS_NUMBER = 3;
     private static final String PRIME_MAIN_QUESTION = "Answer '%s' if given number is prime. Otherwise answer '%s'."
             .formatted(Answer.YES.getValue(), Answer.NO.getValue());
     private static final int FIRST_ODD_DIVISOR = 3;
@@ -18,11 +22,19 @@ public class Prime {
     }
 
     /**
-     * Возвращает объект с выражением (вопросом) и правильным результатом.
+     * Возвращает список объектов с выражением (вопросом) и правильным результатом.
      *
-     * @return объект с выражением и результатом
+     * @return список объектов с выражением и результатом
      */
-    public static ExpressionResult getExpressionResult() {
+    public static List<ExpressionResult> getExpressionResults() {
+        List<ExpressionResult> expressionResults = new ArrayList<>();
+        for (int i = 0; i < PRIME_QUESTIONS_NUMBER; i++) {
+            expressionResults.add(getExpressionResult());
+        }
+        return expressionResults;
+    }
+
+    private static ExpressionResult getExpressionResult() {
         int randomInt = RandomGenerator.getRandomInt();
         Answer correctAnswer = getCorrectAnswer(randomInt);
         return new ExpressionResult(

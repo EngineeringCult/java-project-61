@@ -7,7 +7,10 @@ import java.util.List;
 
 public class Progression {
 
+    private static final int PRIME_QUESTIONS_NUMBER = 3;
     private static final String PROGRESSION_MAIN_QUESTION = "What number is missing in the progression?";
+    private static final String SPACE = " ";
+    private static final String MISSING_ITEM = "..";
     private static final int MIN_LENGTH = 5;
     private static final int MAX_LENGTH = 10;
     private static final int MIN_STEP = 2;
@@ -25,11 +28,19 @@ public class Progression {
     }
 
     /**
-     * Возвращает объект с выражением (вопросом) и правильным результатом.
+     * Возвращает список объектов с выражением (вопросом) и правильным результатом.
      *
-     * @return объект с выражением и результатом
+     * @return список объектов с выражением и результатом
      */
-    public static ExpressionResult getExpressionResult() {
+    public static List<ExpressionResult> getExpressionResults() {
+        List<ExpressionResult> expressionResults = new ArrayList<>();
+        for (int i = 0; i < PRIME_QUESTIONS_NUMBER; i++) {
+            expressionResults.add(getExpressionResult());
+        }
+        return expressionResults;
+    }
+
+    private static ExpressionResult getExpressionResult() {
         int step = RandomGenerator.getRandomIntInRange(MIN_STEP, MAX_STEP);
         int length = RandomGenerator.getRandomIntInRange(MIN_LENGTH, MAX_LENGTH);
         int item = RandomGenerator.getRandomIntInRange(MIN_FIRST_ITEM, MAX_FIRST_ITEM);
@@ -45,11 +56,11 @@ public class Progression {
         StringBuffer buffer = new StringBuffer();
         for (int i = 0; i < progression.size(); i++) {
             if (i == missingItem) {
-                buffer.append("..");
+                buffer.append(MISSING_ITEM);
             } else {
                 buffer.append(progression.get(i));
             }
-            buffer.append(" ");
+            buffer.append(SPACE);
         }
 
         return new ExpressionResult(
