@@ -2,40 +2,40 @@ package hexlet.code.games;
 
 import hexlet.code.utils.RandomGenerator;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static hexlet.code.games.Engine.ROUNDS;
+
 public class Even {
 
-    private static final String EVEN_GAME_NAME = "Even";
+    private static final String YES = "yes";
+    private static final String NO = "no";
     private static final String EVEN_MAIN_QUESTION = "Answer '%s' if the number is even, otherwise answer '%s'."
-            .formatted(Answer.YES.getValue(), Answer.NO.getValue());
+            .formatted(YES, NO);
 
-    /**
-     * Возвращает основной (корневой) вопрос.
-     *
-     * @return основной вопрос
-     */
-    public static String getMainQuestion() {
+    public static void run() {
+        Engine.run(EVEN_MAIN_QUESTION, getExpressionResults());
+    }
+
+    private static String getMainQuestion() {
         return EVEN_MAIN_QUESTION;
     }
 
-    /**
-     * Возвращает объект с выражением (вопросом) и правильным результатом.
-     *
-     * @return объект с выражением и результатом
-     */
-    public static ExpressionResult getExpressionResult() {
-        int randomInt = RandomGenerator.getRandomInt();
-        Answer correctAnswer = getCorrectAnswer(randomInt);
-        return new ExpressionResult(
-                String.valueOf(randomInt),
-                correctAnswer.getValue());
+    private static List<ExpressionResult> getExpressionResults() {
+        List<ExpressionResult> expressionResults = new ArrayList<>();
+        for (int i = 0; i < ROUNDS; i++) {
+            expressionResults.add(getExpressionResult());
+        }
+        return expressionResults;
     }
 
-    private static Answer getCorrectAnswer(int randomInt) {
-        if (isEven(randomInt)) {
-            return Answer.YES;
-        } else {
-            return Answer.NO;
-        }
+    public static ExpressionResult getExpressionResult() {
+        int randomInt = RandomGenerator.getRandomInt();
+        String correctAnswer = isEven(randomInt) ? YES : NO;
+        return new ExpressionResult(
+                String.valueOf(randomInt),
+                correctAnswer);
     }
 
     private static boolean isEven(int randomInt) {

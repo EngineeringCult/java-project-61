@@ -1,10 +1,6 @@
 package hexlet.code.utils;
 
-import hexlet.code.games.MathOperation;
-
 import java.security.SecureRandom;
-
-import static hexlet.code.games.MathOperation.VALUES;
 
 public class RandomGenerator {
 
@@ -13,10 +9,6 @@ public class RandomGenerator {
 
     public static int getRandomInt() {
         return RANDOM.nextInt(MAX_RANDOM_NUMBER + 1);
-    }
-
-    public static MathOperation getRandomMathOperation() {
-        return VALUES[RANDOM.nextInt(VALUES.length)];
     }
 
     public static int getRandomIntInRange(int min, int max) {

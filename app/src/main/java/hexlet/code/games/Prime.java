@@ -2,40 +2,36 @@ package hexlet.code.games;
 
 import hexlet.code.utils.RandomGenerator;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static hexlet.code.games.Engine.ROUNDS;
+
 public class Prime {
 
+    private static final String YES = "yes";
+    private static final String NO = "no";
     private static final String PRIME_MAIN_QUESTION = "Answer '%s' if given number is prime. Otherwise answer '%s'."
-            .formatted(Answer.YES.getValue(), Answer.NO.getValue());
-    private static final int FIRST_ODD_DIVISOR = 3;
+            .formatted(YES, NO);
 
-    /**
-     * Возвращает основной (корневой) вопрос.
-     *
-     * @return основной вопрос
-     */
-    public static String getMainQuestion() {
-        return PRIME_MAIN_QUESTION;
+    public static void run() {
+        Engine.run(PRIME_MAIN_QUESTION, getExpressionResults());
     }
 
-    /**
-     * Возвращает объект с выражением (вопросом) и правильным результатом.
-     *
-     * @return объект с выражением и результатом
-     */
-    public static ExpressionResult getExpressionResult() {
+    private static List<ExpressionResult> getExpressionResults() {
+        List<ExpressionResult> expressionResults = new ArrayList<>();
+        for (int i = 0; i < ROUNDS; i++) {
+            expressionResults.add(getExpressionResult());
+        }
+        return expressionResults;
+    }
+
+    private static ExpressionResult getExpressionResult() {
         int randomInt = RandomGenerator.getRandomInt();
-        Answer correctAnswer = getCorrectAnswer(randomInt);
+        String correctAnswer = isPrime(randomInt) ? YES : NO;
         return new ExpressionResult(
                 String.valueOf(randomInt),
-                correctAnswer.getValue());
-    }
-
-    private static Answer getCorrectAnswer(int randomInt) {
-        if (isPrime(randomInt)) {
-            return Answer.YES;
-        } else {
-            return Answer.NO;
-        }
+                correctAnswer);
     }
 
     private static boolean isPrime(int n) {
@@ -49,7 +45,9 @@ public class Prime {
             return false;
         }
         int sqrt = (int) Math.sqrt(n);
-        for (int i = FIRST_ODD_DIVISOR; i <= sqrt; i += 2) {
+
+        final int firstOddDivisor = 3;
+        for (int i = firstOddDivisor; i <= sqrt; i += 2) {
             if (n % i == 0) {
                 return false;
             }
